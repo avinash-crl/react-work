@@ -1,7 +1,7 @@
-*{
+/* *{
   background-color: black;
   color: white;
-}
+} */
 
 /* :root {
     --text: #6b6375;
@@ -114,3 +114,18 @@
     padding: 4px 8px;
     background: var(--code-bg);
   } */
+
+/*   
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+} */

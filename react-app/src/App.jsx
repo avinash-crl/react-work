@@ -121,61 +121,82 @@
 
 // export default App
 
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 
-import images from "./assets/images";
-import Button from "./component/UI/Button/button.jsx";
-import './App.css';
-import Avinash from "./example.jsx";
-const App=()=>{
-  // const [count,setCounter]=useState(0);
-  // const[data,setData]=useState([]);
+// import images from "./assets/images";
+// import Button from "./component/UI/Button/button.jsx";
+// import './App.css';
+// import Avinash from "./example.jsx";
+// const App=()=>{
+// const [count,setCounter]=useState(0);
+// const[data,setData]=useState([]);
 
-  // useEffect(()=>{
-  //   const fetchData=async()=>{
-  //     const response=await fetch('https://jsonplaceholder.typicode.com/users');
-  //     const data=await response.json();
-  //     setData(data);
-  //   }
-  //   fetchData();
-  // },[])
+// useEffect(()=>{
+//   const fetchData=async()=>{
+//     const response=await fetch('https://jsonplaceholder.typicode.com/users');
+//     const data=await response.json();
+//     setData(data);
+//   }
+//   fetchData();
+// },[])
 
-  // console.log(data,"data");
-  // return(
-  //   <>
-  //      <h1 className="Great" >Hello, Vite + react</h1>
-  //     <img className="sample" src={images.asta} alt="" />
-  //     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum, 
-  //     dignissimos beatae! Vero obcaecati itaque atque quia rem tenetur quidem eaque,
-  //      quas similique nam magni fuga sequi! Sit quibusdam non optio!</p>
-  //     <Button  name={"Avi"} onClick={()=>{alert("Button is clicked");
-        
-  //     }}/>  
-  //      <p>counter: {count}</p>
-  //     <div className="g1">
-  //     <Button  name={"Increment"} onClick={()=>{setCounter(count+1)}}/> 
-  //     <Button  name={"Decement"} onClick={()=>{setCounter(count-1)}}/>
-  //     <Button name={"reset"} onClick={()=>{setCounter(0)}}/>  
-  //     </div>
+// console.log(data,"data");
+// return(
+//   <>
+//      <h1 className="Great" >Hello, Vite + react</h1>
+//     <img className="sample" src={images.asta} alt="" />
+//     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum,
+//     dignissimos beatae! Vero obcaecati itaque atque quia rem tenetur quidem eaque,
+//      quas similique nam magni fuga sequi! Sit quibusdam non optio!</p>
+//     <Button  name={"Avi"} onClick={()=>{alert("Button is clicked");
 
-  //     <div>
-  //       {
-  //         data?.map((item,key)=>{
-  //           return(
-  //             <div key={key}>
-  //               <h2>{item.name}</h2>
-  //               <p>{item.email}</p>
-  //             </div>
-  //           )
-  //         })
-  //       }
-  //     </div>
-  return(
-  <>
-      <Avinash/>
-       </>    
+//     }}/>
+//      <p>counter: {count}</p>
+//     <div className="g1">
+//     <Button  name={"Increment"} onClick={()=>{setCounter(count+1)}}/>
+//     <Button  name={"Decement"} onClick={()=>{setCounter(count-1)}}/>
+//     <Button name={"reset"} onClick={()=>{setCounter(0)}}/>
+//     </div>
 
+//     <div>
+//       {
+//         data?.map((item,key)=>{
+//           return(
+//             <div key={key}>
+//               <h2>{item.name}</h2>
+//               <p>{item.email}</p>
+//             </div>
+//           )
+//         })
+//       }
+//     </div>
+//   return(
+//   <>
+//       <Avinash/>
+//        </>
+
+//   );
+// }
+// export default App;
+
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Form from "./form.jsx";
+import Gallery from "./assignment.jsx";
+import PhotoDetails from "./photo/PhotoDetails.jsx";
+
+function App() {
+  return (
+    <BrowserRouter>
+      {/* <Form /> */}
+
+      <Routes>
+        <Route path="/" element={<Gallery />} />
+        <Route path="/photo/:id" element={<PhotoDetails />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-export default App; 
 
+export default App;
